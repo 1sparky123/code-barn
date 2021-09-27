@@ -1,0 +1,33 @@
+<center>
+---
+title: "Light bulbs" 
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#### what is a light bulb but an enslaved sun?
+
+How quirky and gnarly, here is the table set of the light bulb ID number: $5372$
+
+## Table
+```{r bulb, echo=FALSE, fig.align='center'}
+library(data4led)
+bulb <- led_bulb(1,seed = 5372)
+head(bulb)
+```
+How quirky and gnarly, it looks like this is a plot of the light bulb to better see correlations between time and intensity:
+
+## Plot
+```{r pressure, echo=FALSE, fig.align='center'}
+
+x <- bulb$hours
+y <- bulb$percent_intensity
+plot(x,y, pch = 16,
+  ylab = "% Intensity",
+  xlab = "hours")
+#plot(percent_intensity ~ hours, data = bulb, pch = 5, col = "#ff11d3")
+```
+In general there seems to be a square root function that slowly degrades as time goes on
+</center>
